@@ -6,6 +6,11 @@ import './App.css';
 
 class App extends Component {
 
+  state = {
+    users: [],
+    loading: false
+  };
+
   async componentDidMount() {
     this.setState({ loading: true });
 
@@ -19,7 +24,7 @@ class App extends Component {
       <div className="App">
         <Navbar/>
         <div className="container">
-          <Users/>
+          <Users loading={this.state.loading} users={this.state.users} />
         </div>
       </div>
     );
