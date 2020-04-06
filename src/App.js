@@ -13,7 +13,6 @@ import GithubState from './context/github/GithubState';
 
 const App = () => {
 
-  const [users, setUsers] = useState([]);
   const [user, setUser] = useState({});
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -47,11 +46,6 @@ const App = () => {
     setLoading(false);
   };
 
-  // Clear Users from state
-  const clearUsers = () => {
-    setUsers([]);
-    setLoading(false);
-  };
 
   // Set alert when user enter no query
   const showAlert = (msg, type) => {
@@ -74,8 +68,6 @@ const App = () => {
                 render={props => (
                   <Fragment>
                     <Search
-                      clearUsers={clearUsers}
-                      showClear={users.length > 0 ? true : false}
                       setAlert={showAlert}
                     />
                     <Users />
