@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import GithubContext from '../../context/github/githubContext';
 
 const User = ({ match }) => {
-
   const githubContext = useContext(GithubContext);
+
   const { user, loading, getUser, repos, getUserRepos } = githubContext;
 
   useEffect(() => {
@@ -82,7 +82,7 @@ const User = ({ match }) => {
         <div className="card text-center">
           <div className="badge badge-primary">Followers: {followers}</div>
           <div className="badge badge-success">Following: {following}</div>
-          <div className="badge badge-danger">Public Repos: {public_repos}</div>
+          <div className="badge light">Public Repos: {public_repos}</div>
           <div className="badge badge-dark">Public Gists: {public_gists} {followers}</div>
         </div>
 
